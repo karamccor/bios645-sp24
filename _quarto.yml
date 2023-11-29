@@ -22,7 +22,7 @@ website:
       - href: materials.qmd
         text: Materials
       - href: https://github.com/karamccor/bios645-sp24
-        text: Forum
+        text: Syllabus
 
 format:
   html:
