@@ -6,10 +6,10 @@ Example schedule:
 
 |  Date   |                Slides              |          Homework                     |
 |:-------:|:-----------------------------------:|:--------------------------------------:|
-|  Monday  | [Lecture 1](lectures/lecture1.qmd)           | git / GitHub                           |
-|  M  | Generalised Linear Models           | Data visualisation                     |
-|  X  | Mixed models / GAM / Bayes          | Functional programming + Students work |
-|  J  | Multivariate analyses               | Reproducible workflows                 |
-|  V  | Using R as GIS + Students work      | Project presentations                  |
+|  Monday  | [Lecture 1](lectures/lecture1.qmd)   | git / GitHub                           |
+|  M  | Lecture 2           | Data visualisation                     |
+|  X  | Lecture 3          | Functional programming + Students work |
+|  J  | Lecture 4               | Reproducible workflows                 |
+|  V  | Lecture 5      | Project presentations                  |
 
 
