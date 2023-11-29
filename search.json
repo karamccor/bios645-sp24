@@ -7,6 +7,20 @@
     "text": "Datasets\nSlides"
   },
   {
+    "objectID": "lectures/lecture1.html#hello-world",
+    "href": "lectures/lecture1.html#hello-world",
+    "title": "lecture1",
+    "section": "Hello world",
+    "text": "Hello world\n\nHow are you"
+  },
+  {
+    "objectID": "lectures/lecture1.html#here-is-another-slide",
+    "href": "lectures/lecture1.html#here-is-another-slide",
+    "title": "lecture1",
+    "section": "Here is another slide",
+    "text": "Here is another slide\n\nHola"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Course Title",
@@ -18,6 +32,6 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Example schedule:\n\n\n\n\n\n\n\n\nDate\nSlides\nHomework\n\n\n\n\nMonday\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
+    "text": "Example schedule:\n\n\n\nDate\nSlides\nHomework\n\n\n\n\nMonday\nLecture 1\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
   }
 ]
