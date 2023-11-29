@@ -6,7 +6,7 @@ Example schedule:
 
 |  Date   |                Slides              |          Homework                     |
 |:-------:|:-----------------------------------:|:--------------------------------------:|
-|  Monday  | Intro + Data manipulation           | git / GitHub                           |
+|  Monday  | [Lecture 1](lectures/lecture1.qmd)           | git / GitHub                           |
 |  M  | Generalised Linear Models           | Data visualisation                     |
 |  X  | Mixed models / GAM / Bayes          | Functional programming + Students work |
 |  J  | Multivariate analyses               | Reproducible workflows                 |
