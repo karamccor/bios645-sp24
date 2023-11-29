@@ -4,8 +4,8 @@ title: "Schedule"
 
 Example schedule:
 
-|     |                Morning              |          Afternoon                     |
-|:---:|:-----------------------------------:|:--------------------------------------:|
+|  Date   |                Slides              |          Homework                     |
+|:-------:|:-----------------------------------:|:--------------------------------------:|
 |  L  | Intro + Data manipulation           | git / GitHub                           |
 |  M  | Generalised Linear Models           | Data visualisation                     |
 |  X  | Mixed models / GAM / Bayes          | Functional programming + Students work |
