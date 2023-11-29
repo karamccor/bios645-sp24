@@ -32,6 +32,6 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Example schedule:\n\n\n\nDate\nSlides\nHomework\n\n\n\n\nMonday\nLecture 1\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
+    "text": "Example schedule:\n\n\n\nDate\nSlides\nHomework\n\n\n\n\nMonday\nLecture 1\ngit / GitHub\n\n\nM\nLecture 2\nData visualisation\n\n\nX\nLecture 3\nFunctional programming + Students work\n\n\nJ\nLecture 4\nReproducible workflows\n\n\nV\nLecture 5\nProject presentations"
   }
 ]
