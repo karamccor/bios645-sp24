@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Course Title"
+  title: "BIOS645: Principles of Experimental Analysis"
   sidebar:
     background: primary
     # logo: "images/logo.png"
@@ -11,7 +11,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/Pakillo/quarto-course-website-template
+        href: https://github.com/karamccor/bios645-sp24
         text: GitHub
     style: docked
     contents:
@@ -21,13 +21,13 @@ website:
         text: Schedule
       - href: materials.qmd
         text: Materials
-      - href: https://github.com/Pakillo/quarto-course-website-template/discussions
+      - href: https://github.com/karamccor/bios645-sp24
         text: Forum
 
 format:
   html:
     theme: cosmo
-    # css: styles.css
+     css: styles.css
     toc: true
 
 execute:
