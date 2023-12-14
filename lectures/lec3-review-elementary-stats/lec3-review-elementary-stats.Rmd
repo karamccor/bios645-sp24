@@ -1,0 +1,47 @@
+---
+title: "Lecture 3"
+author: "Kara McCormack"
+date: "Thursday, January 18, 2024"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+subtitle: Review of Elementary Statistics
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## How would you summarize a set of data?
+
+- List the values
+- Refer to a known distribution
+
+### Distribution (put loosely):
+
+A mathematical rule that describes the relative frequency of different events.
+
+(e.g., normal, uniform, Bernoulli, binomial, Poisson, etc.)
+
+- The following is a probability density function (pdf) of a random variable $Y$ that is normally distributed with mean $\mu$ and variance $\sigma^2$. 
+
+$$Y = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(X-\mu)^2}{\sigma^2}\right]$$
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
