@@ -1,0 +1,82 @@
+---
+title: "Lecture 4"
+author: "Kara McCormack"
+date: "Tuesday, January 18, 2024"
+output: ioslides_presentation
+
+subtitle: Simple Regression - Estimation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## What is regression?
+
+Suppose we have a scatterplot of two variables, $x$ and $y$. 
+
+![](figures/reg1.png)
+
+## What is regression?
+
+Now suppose we fit a line to these data. 
+
+![](figures/reg2.png)
+
+
+
+What makes one line better than another?
+
+## How far is apoint from the line?
+
+![](figures/reg2.png)
+
+If we want to measure the distance away from each line, we can take the y and x distance from each line. 
+
+## The linear regression model
+
+- The simple linear regression model is:
+
+$$Y = \beta_0 + \beta_1 X + \varepsilon$$
+
+where $\varepsilon \sim N(0, \sigma^2_\varepsilon)$. 
+
+- The equation of a fitted line:
+
+$$\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$$
+
+- The Sum of Squared Errors (SSE) is a loss function that defines how poorly our line fits:
+
+$SSE = \sum_{i=1}^N(y_i - \hat{y_i})^2$
+
+$SSE = \sum_{i=1}^N(y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i))^2$
+
+- This is called Ordinary Least Squares, or OLS for short. 
+
+## Detour: Calculus
+
+- Recall from calculus learning about finding the derivative. 
+- You may have started by calculating the slope of a straight line using the slope formula. 
+- But what about the slope of a curved line at any given point?
+
+![](figures/calc1.png)
+
+## Detour: Calculus
+
+- In order to find the slope of a line at any given point, we would need to find the derivative. 
+![](figures/calc2.png)
+
+  Recall: If $y = cx^p$, then $\frac{dy}{dx} = cpx^{(p-1)}$
+  
+$y = 15-7.2x + x^2$
+$y = 15x^0 - 7.2x^1 + 1x^2$
+
+$\frac{dy}{dx}= 15\cdot 0 \cdot x^{(0-1)} - 7.2 \cdot 1 \cdot x^{(1-1)} + 1 \cdot 2 \cdot x^{(2-1)}$
+
+## Comprehension questions for self-study
+
+- Is the fitted OLS regression line the line that is closest to all the data? In what sense?
+
+- How would you choose whether to use Pearson's correlation or regression for two variables? If you choose the latter, how would you choose which variable to be Y? 
+
+- <Submit your suggestions>
