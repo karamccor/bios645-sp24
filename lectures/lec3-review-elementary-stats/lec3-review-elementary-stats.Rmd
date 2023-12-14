@@ -2,9 +2,7 @@
 title: "Lecture 3"
 author: "Kara McCormack"
 date: "Thursday, January 18, 2024"
-output:
-  ioslides_presentation:
-    font_adjustment: -1
+output: ioslides_presentation
 
 subtitle: Review of Elementary Statistics
 ---
@@ -134,7 +132,6 @@ We know that the distribution of IQ scores:
 2. has a known SD (15)
 3. is normally distributed
 
-## IQ visualization
 
 ![](figures/iq1.png)
 
@@ -274,8 +271,6 @@ $CI_{95\%} = (\bar{x}-1.96 \frac{\sigma}{\sqrt{N}}), \bar{x}-1.96 \frac{\sigma}{
 4. The statistic calculated from your sample is a realized value. 
 
 5. We can use knowledge of the sampling distribution to compare our sample/sample statistic to the population. It is thus possible to assess how improbable our sample (say, sample mean) is and make a decision. 
-
-## Summary (continued)
 
 6. Hypothesis testing is asymmetrically informative. 
 
