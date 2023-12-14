@@ -3,8 +3,8 @@ title: "Lecture 3"
 author: "Kara McCormack"
 date: "Thursday, January 18, 2024"
 output:
-  beamer_presentation: default
   ioslides_presentation: default
+  beamer_presentation: default
 subtitle: Review of Elementary Statistics
 ---
 
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## How would you summarize a set of data?
 
-- List the values
+- List the values, find a min/max, range, find the average
 - Refer to a known distribution
 
 ### Distribution (put loosely):
@@ -23,23 +23,50 @@ A mathematical rule that describes the relative frequency of different events.
 
 (e.g., normal, uniform, Bernoulli, binomial, Poisson, etc.)
 
-- The following is a probability density function (pdf) of a random variable $Y$ that is normally distributed with mean $\mu$ and variance $\sigma^2$. 
+- For example, a normal distribution:
 
-$$Y = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(X-\mu)^2}{\sigma^2}\right]$$
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right]$$
 
-## Slide with Bullets
+## For example
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}\right]$$
 
-## Slide with R Output
+- We could calculate an average of all values: $\bar{x} = \frac{\sum_{i=1}^n x_i}{N}$
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+- We could calculate a sample variance of the values: $s^2 = \frac{\sum_{i=1}^N(x_i - \bar{x})^2}{(N-1)}$
 
-## Slide with Plot
+
+![](figures/sample_pop.png)
+
+## How should we think about $\mu$ and $\bar{x}$?
+
+- What is a variable?
+- Recall from past math courses: 7 + x = 10
+
+### Variable vs. unknown constant (loosely):
+
+A variable is a number you can move around, not just a number whose value you don't know. 
+
+## Random variable
+
+- What is a random variable?
+
+**Random variables vs. realized values (loosely):**
+
+A random variable is a number that moves around according to a probability distribution. A realized value is just a number, although it may have come from a probabilistic process. 
+
+![](figures/xkcd_random.png)
+
+## Distributions can refer to different sets of entities
+
+- Sample (e.g. the people in your study)
+- Population (e.g. all of humanity)
+
+**The Big Question**
+
+- Why is it possible to use what we've discovered about a sample distribution to say something about the population distribution? (And how would we go about this?)
+
+![](figures/sample_pop2.png)
 
 ```{r pressure}
 plot(pressure)
