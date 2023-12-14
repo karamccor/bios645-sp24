@@ -232,4 +232,61 @@ $f(t) = \frac{\Gamma(\frac{df + 1}{2})}{\sqrt{(df) \cdot \pi} \Gamma\left(\frac{
 
 - We can make a single statistic by subtracting the two means and comparing the difference to the sampling distribution of the difference between the means. 
 
-$t = \frac{(\bar{x}_2-\bar{x}_1)}{}$
+$t = \frac{(\bar{x}_2-\bar{x}_1) - (\mu_2 - \mu_1)}{s_{x_1 x_2}\sqrt{\frac{1}{n_1}+ \frac{1}{n_2}}}$
+
+$s_{x_1 x_2} = \sqrt{\frac{(n_1 - 1)s^2_{x_1} + (n_2 - 1)s^2_{x_2}}{n_1 + n_2 - 2}}$
+
+ where $n_1$ and $n_2$ are the sizes of each sample, respectively. 
+ 
+
+## Parameter Estimation
+
+We can also go in the other direction. That is, what population did our data come from?
+
+- When drawing a sample from a given population, the most likely sample mean to get is the population mean. 
+
+- So, the sample mean is the "best guess" (point estimate) for the population mean. 
+
+- You can use the samp*ling* distribution to get a 95% confidence interval of the population mean. 
+
+## Confidence Intervals
+
+$CI_{95\%} = (\bar{x}-1.96\sigma_{\bar{x}}, \bar{x}+1.96\sigma_{\bar{x}})$
+
+or
+
+$CI_{95\%} = (\bar{x}-1.96 \frac{\sigma}{\sqrt{N}}), \bar{x}-1.96 \frac{\sigma}{\sqrt{N}}))$
+
+## Warning
+
+- Confidence does not mean probability!
+
+- The confidence interval is the range of values that you expect your estimate to fall between a certain percentage of the time if you run your experiment infinitely many times or re-sample the population in the same way.
+
+## Summary
+
+1. Sample statistics are random variables. 
+
+2. The behavior of a statistic is described by its samp*ling* distribution.
+
+3. Under certain conditions (often reasonable), we can make assumptions about the properties of the samp*ling* distribution. 
+
+4. The statistic calculated from your sample is a realized value. 
+
+5. We can use knowledge of the sampling distribution to compare our sample/sample statistic to the population. It is thus possible to assess how improbable our sample (say, sample mean) is and make a decision. 
+
+## Summary (continued)
+
+6. Hypothesis testing is asymmetrically informative. 
+
+7. We can use our sample statistics as estimates of the parameters of the population it came from. 
+
+## Next time
+
+- Topic: What is regression?
+
+- Read: 
+  - Neter Chapter 1 (to prepare)
+  - Kleinbaum 5.1-5.6
+
+
