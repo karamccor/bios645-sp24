@@ -11,6 +11,13 @@ subtitle: Review of Elementary Statistics
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## Linear models are powerful!
+
+- Linear models are incredibly powerful tool to model the relationships between variables. 
+- There are often times when linear models are not appropriate (e.g. for violating the technical conditions). 
+- A solid understanding of the linear model framework requires a strong foundation of the theory that goes into modeling. 
+- Today we'll review some of the ideas from introductory statistics. 
+
 ## How would you summarize a set of data?
 
 - List the values, find a min/max, range, find the average
@@ -73,11 +80,24 @@ Sample statistics are random variables.
 
 - but *your* sample mean is a realized value drawn from that random variable. 
 
-The behavior of random variables can be described by a distribution
+The behavior of random variables can be described by a distribution.
 
 Distributions of sample statistics are called **sampling distributions**. 
 
-- If only we knew something about the nature of the sampling distribution. 
+## Example of Sampling Distributions
+
+- Let's look at an example of student height. 
+- Suppose we recorded the height of everyone in this class. 
+- Let's say the average height is 5' 8''. 
+- Survey 10 classes at UNC, might get averages of 5’9″, 5’8″, 5’10”, 5’9″, 5’7″, 5’9″, 5’9″, 5’10”, 5’7″, and 5’9. 
+- If you graphed all those averages in a histogram, you might get something like this:
+
+## Example (continued)
+
+- If we surveyed all classes at UNC, (took the heights of each student in the class, recorded the mean in each class, and then made a histogram of those means) the distribution of the means would look more like a standard normal curve. 
+- Why does this happen? Answer: The Central Limit Theorem!
+- Next, we'll talk about the Central Limit Theorem and the Law of Large Numbers.
+
 
 ## Some (very light) Theory
 
@@ -97,12 +117,13 @@ If our data are an unbiased sample, where each datum is independent and drawn fr
 - [Interactive example of Law of Large Numbers](https://www.stapplet.com/largenum.html)
 
 
-- [Interactive example of Central Limit Theorem](https://stats-interactives.ctl.columbia.edu/central-limit-theorem)
-
 ## Why would anyone take samples identically from the same population over and over again?
 
 ANOVA!
 
+- Analysis of Variance
+- Used to compare the means of multiple groups. 
+- Example of one-way ANOVA: As a crop researcher, you want to test the effect of 3 different fertilizer mixtures on crop yield. 
 - The null hypothesis in a one-way ANOVA is that you sampled the same population repeatedly (i.e. the conditions don't differ)
 
 - ANOVA uses the F-test to determine whether the variability between group means is larger than the variability of the observations within the groups.
@@ -116,7 +137,9 @@ ANOVA!
   2. its SD, and
   3. that it was normally distributed,
   
-then we could see how our sample compared to that population. We could do so by comparing our sample's mean to the distribution of sample means that would be drawn from that population under repeated sampling. 
+then we could see how our sample compared to that population. 
+
+- We could do so by comparing our sample's mean to the distribution of sample means that would be drawn from that population under repeated sampling (aka, a critical value under the Z (standard normal) distribution). 
 
 $z_{\bar{x}} = \frac{\bar{x}-\mu}{\sigma_{\bar{x}}}$ or $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
 
@@ -145,47 +168,71 @@ $IQ = \{118, 121, 101, 120, 113, 131, 126, 112, \\ 116, 117, 124, 115, 120, 115,
 
 - Sample standard deviation $s_x = 7.1$
 
-- $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
+  - Recall $s_x = \sqrt{\frac{1}{(n-1)}\sum_{i=1}^N(x_i - \bar{x})^2}$
+
+- Based on our data, we can calculate a critical value  = $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
 
 - $19.84 = \frac{118.6-100}{15/4}$
+
+- How does our value compare with a standard normal distribution?
 
 ## IQ example (continued)
 
 ![](figures/iq2.png)
 
-## IQ example (continued)
-
 - 19.84!! That's pretty extreme. 
 
 - In fact, we can ask the question: 
-    - What's the probability of gathering a sample with a mean that far or further from the population mean?
+    - What's the probability of gathering a sample with a mean that far or further from the population mean? (The answer is the p-value!)
     
-- The answer to that question is the p-value. 
+
 
 ## P-value visualization
 
 ![](figures/iq3.png)
 
-## Two ways to use a p-value
+## Null and alternative hypotheses
 
-- Fisher: a measure of the amount of evidence against the null hypothesis; lower p-values mean more evidence. 
+But first:
 
-- Neyman-Pearson: you can either reject or fail to reject the null hypothesis, which in turn could be true or not. There are 4 possible outcomes. 
+- **Null Hypothesis**: Denoted $H_0$, the null hypothesis is usually set up to be what is believed unless evidence is presented otherwise. 
 
-![](figures/hyp_table.png)
+- **Alternative Hypothesis**: Denoted $H_A$, the alternative hypothesis is usually what we wish to show is true. It is more general than $H_0$, usually of the form the parameter is somehow not equal to the value used in $H_0$, without specifying exactly what we think it is. 
 
-## 2 types of errors
+## But what really is an Alternative Hypothesis?
 
-- **Type 1 error** is rejecting the null hypothesis when it's actually true. 
+- Consider the brief video from the movie Slacker, an early movie by Richard Linklater (director of Boyhood, School of Rock, Before Sunrise, etc.)
+- [https://www.youtube.com/watch?v=b-U_I1DCGEY](https://www.youtube.com/watch?v=b-U_I1DCGEY)
+- Watch from 2:22-4:30.
+
+## Reflecting on the video
+
+- The rider in the back of a taxi (played by Linklater himself) muses about alternate realities that could have happened as he arrived in Austin on the bus. 
+- What if he had found a ride instead?
+- Could have taken a different road into a different alternative reality (and that in reality his current reality would be an alternate reality). And so on. 
+- What is the point? What is the relationship to sampling distributions?
+- Since any procedure will have the potential to be wrong, we search for one that makes bad errors infrequently. 
+
+- There are two types of errors that can be made. 
+
+## Two types of errors
+
+- **Type I Error**: Rejecting $H_0$ when $H_0$ is actually true. Usually considered the worst possible error, and thus we find a procedure which makes the type I error with only a small probability (we denote this by $\alpha$). 
+
+- **Type II Error**: Not rejecting $H_0$ when $H_A$ is actually true. Having a small type II error is a secondary concern (after controlling the type I error). The probability of a type II error is denoted by $\beta$. 
+- $1-\beta$ is known as the $power$. 
+
+
 
 ![](figures/type_errors.png)
+## P-value
 
+- A p-value is the probability, if $H_0$ were true, of observing data as or more contradictory to $H_0$ if we were to repeat the experiment again. 
+- So if the p-value is .01, it means the data showed something that happens only about 1 time in 100 when $H_0$ is true. 
+- Considering that the particular set of data *was* observed, the reasonable conclusion is that $H_0$ must not be true. 
+- The rule is: reject $H_0$ if p-value < $\alpha$. 
+- Th resulting test will have a type I error probability of $\alpha$, which is the value we get to specify. 
 
-## Type 2 error and power
-
-- **Type 2 error** is failing to reject the null hypothesis when it's actually false. 
-
-- **Power** is the probability of rejecting the null hypothesis when, in fact, it is false. 
 
 ## The logic of hypothesis testing
 
@@ -284,4 +331,8 @@ $CI_{95\%} = (\bar{x}-1.96 \frac{\sigma}{\sqrt{N}}), \bar{x}-1.96 \frac{\sigma}{
   - Neter Chapter 1 (to prepare)
   - Kleinbaum 5.1-5.6
 
+## References
 
+These slides were partially adapted from:
+
+[https://st47s.com/Math158/Notes/intro.html#statistics-a-review](https://st47s.com/Math158/Notes/intro.html#statistics-a-review)
