@@ -4,7 +4,7 @@ author: "Kara McCormack"
 date: "Thursday, January 18, 2024"
 output: ioslides_presentation
 
-subtitle: Review of Elementary Statistics
+subtitle: Statistics Review
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +37,7 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu)^
 
 - We could calculate an average of all values: $\bar{x} = \frac{\sum_{i=1}^n x_i}{N}$
 
-- We could calculate a sample variance of the values: $s^2 = \frac{\sum_{i=1}^N(x_i - \bar{x})^2}{(N-1)}$
+- We could calculate a sample variance of the values: $s^2 = \frac{\sum_{i=1}^N(x_i - \bar{x})^2}{(n-1)}$
 
 
 ![](figures/sample_pop.png)
@@ -47,9 +47,11 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu)^
 - What is a variable?
 - Recall from past math courses: 7 + x = 10
 
-**Variable vs. unknown constant (loosely):**
+**Variable definition (loosely):**
 
-- A variable is a number you can move around, not just a number whose value you don't know. 
+- A variable is a characteristic that can be measured and that can assume different values.
+
+- For example: height, age, country of birth, grades at school
 
 ## Random variable
 
@@ -57,14 +59,19 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu)^
 
 **Random variables vs. realized values (loosely):**
 
-A random variable is a number that moves around according to a probability distribution. A realized value is just a number, although it may have come from a probabilistic process. 
+- A **random variable** is a number that moves around according to a probability distribution. In other words, a random variable is a way of mapping a random process to numbers.
+  
+  - Example: X = {1 if heads, 0 if tails} after flipping a coin.
+  - Example: Y = sum of upward face after rolling 7 dice
+
+- A **realized value** of a random variable is the value that is actually observed. (It's just a number, although it may have come from a probabilistic process.)
 
 ![](figures/xkcd_random.png)
 
 ## Distributions can refer to different sets of entities
 
-- Sample (e.g. the people in your study)
 - Population (e.g. all of humanity)
+- Sample (e.g. the people in your study)
 
 **The Big Question**
 
@@ -72,23 +79,28 @@ A random variable is a number that moves around according to a probability distr
 
 ![](figures/sample_pop2.png)
 
+## The setup
+
+- The set up: the population is too big to observe. 
+- We'd like to know the value of specific parameters, say for instance the mean of the population. 
+- We can't calculate the parameters directly. Instead, we observe a sample at random from a population. 
+- Based on the sample, we estimate parameters. 
+
 ## Samp*ling* distributions
 
 Sample statistics are random variables. 
 
-- E.g., "the" sample mean is a random variable,
-
-- but *your* sample mean is a realized value drawn from that random variable. 
+- E.g., "the" sample mean is a random variable, but *your* sample mean is a realized value drawn from that random variable. 
 
 The behavior of random variables can be described by a distribution.
 
 Distributions of sample statistics are called **sampling distributions**. 
 
-## Example of Sampling Distributions
+- Let's look at an example!
 
-- Let's look at an example of student height. 
-- Suppose we recorded the height of everyone in this class. 
-- Let's say the average height is 5' 8''. 
+## Example of a Sampling Distribution
+
+- Suppose we recorded the height of everyone in this class. Let's say the average height is 5' 8''. 
 - Survey 10 classes at UNC, might get averages of 5’9″, 5’8″, 5’10”, 5’9″, 5’7″, 5’9″, 5’9″, 5’10”, 5’7″, and 5’9. 
 - If you graphed all those averages in a histogram, you might get something like this:
 
@@ -105,16 +117,15 @@ Distributions of sample statistics are called **sampling distributions**.
 
 - As $N$ goes to infinity, the sample mean converges to the population mean (or true value). 
 
+- [Interactive example of Law of Large Numbers](https://www.stapplet.com/largenum.html)
+
+
 **The Central Limit Theorem (loosely)**:
 If our data are an unbiased sample, where each datum is independent and drawn from the same population, which has mean = $\mu$ and variance = $\sigma^2$, then, as $N$ becomes large, the distribution of the sample mean will be: 
 
 1. Approximately Normal
 2. centered on the population mean / true value
 3. with variance: $\sigma_{\bar{x}}^2 = \frac{\sigma^2}{N}$ (and thus SE: $\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}})$
-
-## Examples
-
-- [Interactive example of Law of Large Numbers](https://www.stapplet.com/largenum.html)
 
 
 ## Why would anyone take samples identically from the same population over and over again?
@@ -126,7 +137,7 @@ ANOVA!
 - Example of one-way ANOVA: As a crop researcher, you want to test the effect of 3 different fertilizer mixtures on crop yield. 
 - The null hypothesis in a one-way ANOVA is that you sampled the same population repeatedly (i.e. the conditions don't differ)
 
-- ANOVA uses the F-test to determine whether the variability between group means is larger than the variability of the observations within the groups.
+- ANOVA uses the F-test to determine whether the variability between group means is larger than the variability of the observations within the groups. (More on this later.)
 
 
 ## Repeated samples from the same population are useful!
@@ -139,7 +150,7 @@ ANOVA!
   
 then we could see how our sample compared to that population. 
 
-- We could do so by comparing our sample's mean to the distribution of sample means that would be drawn from that population under repeated sampling (aka, a critical value under the Z (standard normal) distribution). 
+- We could do so by comparing our sample's mean to the distribution of sample means that would be drawn from that population under repeated sampling.
 
 $z_{\bar{x}} = \frac{\bar{x}-\mu}{\sigma_{\bar{x}}}$ or $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
 
@@ -168,9 +179,9 @@ $IQ = \{118, 121, 101, 120, 113, 131, 126, 112, \\ 116, 117, 124, 115, 120, 115,
 
 - Sample standard deviation $s_x = 7.1$
 
-  - Recall $s_x = \sqrt{\frac{1}{(n-1)}\sum_{i=1}^N(x_i - \bar{x})^2}$
+  - Recall $s_x = \sqrt{\frac{1}{(N-1)}\sum_{i=1}^N(x_i - \bar{x})^2}$
 
-- Based on our data, we can calculate a critical value  = $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
+- Based on our data, we can calculate our Z score  = $z_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{N}}}$
 
 - $19.84 = \frac{118.6-100}{15/4}$
 
@@ -185,11 +196,6 @@ $IQ = \{118, 121, 101, 120, 113, 131, 126, 112, \\ 116, 117, 124, 115, 120, 115,
 - In fact, we can ask the question: 
     - What's the probability of gathering a sample with a mean that far or further from the population mean? (The answer is the p-value!)
     
-
-
-## P-value visualization
-
-![](figures/iq3.png)
 
 ## Null and alternative hypotheses
 
@@ -220,11 +226,14 @@ But first:
 - **Type I Error**: Rejecting $H_0$ when $H_0$ is actually true. Usually considered the worst possible error, and thus we find a procedure which makes the type I error with only a small probability (we denote this by $\alpha$). 
 
 - **Type II Error**: Not rejecting $H_0$ when $H_A$ is actually true. Having a small type II error is a secondary concern (after controlling the type I error). The probability of a type II error is denoted by $\beta$. 
-- $1-\beta$ is known as the $power$. 
+- $1-\beta$ is known as the $power$.
 
+- Let's check out a visual of this on the next slide. 
 
+## Visualizing Type I and II Errors
 
 ![](figures/type_errors.png)
+
 ## P-value
 
 - A p-value is the probability, if $H_0$ were true, of observing data as or more contradictory to $H_0$ if we were to repeat the experiment again. 
@@ -232,6 +241,8 @@ But first:
 - Considering that the particular set of data *was* observed, the reasonable conclusion is that $H_0$ must not be true. 
 - The rule is: reject $H_0$ if p-value < $\alpha$. 
 - Th resulting test will have a type I error probability of $\alpha$, which is the value we get to specify. 
+- $\alpha$ is often set to be 0.5.
+
 
 
 ## The logic of hypothesis testing
@@ -266,13 +277,15 @@ $t_{\bar{x}} = \frac{\bar{x}-\mu}{\frac{s}{\sqrt{N}}}$
 
 - The $t$ distribution has only 1 parameter, its degrees of freedom (df). 
 
-- For a one-sample t-test, the df is $N-1$. 
+- For a one-sample t-test, the df is $N-1$ (i.e. the number of observations minus 1).  
 
 - Note that when the degrees of freedom becomes large ($>30, >50, >100)$, the t-distribution becomes virtually indistinguishable from the normal. 
+
 
 $f(t) = \frac{\Gamma(\frac{df + 1}{2})}{\sqrt{(df) \cdot \pi} \Gamma\left(\frac{df}{2}\right)}\left(1 + \frac{t^2}{df}\right)^{-(df + 1)/2}$
 
 ## What if we have 2 conditions?
+
 
 - We can make a single statistic by subtracting the two means and comparing the difference to the sampling distribution of the difference between the means. 
 
@@ -295,6 +308,8 @@ We can also go in the other direction. That is, what population did our data com
 
 ## Confidence Intervals
 
+- If we know the population SD, then we can create confidence intervals for our estimate of $\bar{x}$:
+
 $CI_{95\%} = (\bar{x}-1.96\sigma_{\bar{x}}, \bar{x}+1.96\sigma_{\bar{x}})$
 
 or
@@ -306,6 +321,15 @@ $CI_{95\%} = (\bar{x}-1.96 \frac{\sigma}{\sqrt{N}}), \bar{x}-1.96 \frac{\sigma}{
 - Confidence does not mean probability!
 
 - The confidence interval is the range of values that you expect your estimate to fall between a certain percentage of the time if you run your experiment infinitely many times or re-sample the population in the same way.
+
+- If we were to repeat the process many times, (1-$\alpha$)100% of the time our confidence interval captures the true parameter. 
+
+## Reflection Questions
+
+1. What are type I error, type II error, and power?
+
+2. What is a p-value?
+
 
 ## Summary
 
@@ -333,6 +357,6 @@ $CI_{95\%} = (\bar{x}-1.96 \frac{\sigma}{\sqrt{N}}), \bar{x}-1.96 \frac{\sigma}{
 
 ## References
 
-These slides were partially adapted from:
+These slides utilizes examples from:
 
 [https://st47s.com/Math158/Notes/intro.html#statistics-a-review](https://st47s.com/Math158/Notes/intro.html#statistics-a-review)
